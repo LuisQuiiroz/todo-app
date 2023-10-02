@@ -1,3 +1,5 @@
+import { CheckIcon, ExitIcon } from './Icons'
+
 export default function EditForm ({ todo, edit, update }) {
   const { id, task } = todo
   const onSubmit = (e) => {
@@ -19,15 +21,15 @@ export default function EditForm ({ todo, edit, update }) {
         defaultValue={task}
       />
       <button
-        className='bg-red-500 px-6 py-3 rounded-xl text-white font-semibold'
+        className='bg-red-500 px-6 py-3 rounded-xl text-white'
         type='button'
         onClick={() => edit(id)}
-      >x
+      ><ExitIcon />
       </button>
       <button
-        className='bg-blue-1 px-6 py-3 rounded-xl text-white font-semibold'
+        className='bg-blue-1 px-6 py-3 rounded-xl text-white'
         type='submit'
-      >Add
+      ><CheckIcon />
       </button>
     </form>
   )
