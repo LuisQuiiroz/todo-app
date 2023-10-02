@@ -72,25 +72,33 @@ function App () {
     <>
       <main className='container mx-auto p-4 md:w-1/2 text-center'>
         <h1 className='text-4xl font-raleway font-bold mt-8 mb-14'>#todo</h1>
-        <div className='flex justify-around  border-b border-gray-2'>
-          <button
-            className={`text-sm font-semibold border-b-4 pb-4 px-4 md:px-9 ${status === statusbar.all ? 'border-blue-1' : 'border-transparent'}`}
-            type='button'
-            onClick={() => setStatus(statusbar.all)}
-          >All
-          </button>
-          <button
-            className={`text-sm font-semibold border-b-4 pb-4 px-4 md:px-9 ${status === statusbar.active ? 'border-blue-1' : 'border-transparent'}`}
-            type='button'
-            onClick={() => setStatus(statusbar.active)}
-          >Active
-          </button>
-          <button
-            className={`text-sm font-semibold border-b-4 pb-4 px-4 md:px-9 ${status === statusbar.completed ? 'border-blue-1' : 'border-transparent'}`}
-            type='button'
-            onClick={() => setStatus(statusbar.completed)}
-          >Completed
-          </button>
+        <div className='grid grid-cols-3 gap-4 border-b border-gray-2'>
+          <div className='mx-auto'>
+            <button
+              className={`text-sm font-semibold border-b-4 pb-4 px-1 md:px-6 ${status === statusbar.all ? 'border-blue-1' : 'border-transparent'}`}
+              type='button'
+              onClick={() => setStatus(statusbar.all)}
+            >All
+            </button>
+          </div>
+          <div className='mx-auto'>
+            <button
+              className={`text-sm font-semibold border-b-4 pb-4 px-1 md:px-6 ${status === statusbar.active ? 'border-blue-1' : 'border-transparent'}`}
+              type='button'
+              onClick={() => setStatus(statusbar.active)}
+            >Active
+            </button>
+          </div>
+
+          <div className='mx-auto'>
+            <button
+              className={`text-sm font-semibold border-b-4 pb-4 px-1 md:px-6 ${status === statusbar.completed ? 'border-blue-1' : 'border-transparent'}`}
+              type='button'
+              onClick={() => setStatus(statusbar.completed)}
+            >Completed
+            </button>
+          </div>
+
         </div>
         <form className='flex gap-6 w-full my-4' onSubmit={onSubmit}>
           <input
